@@ -25,3 +25,9 @@
         font-weight: 700;
     }
 }
+
+@media screen and (min-width:1024px){
+    .boost{
+        background-image: url('/static/images/bg-boost-desktop.svg');
+    }
+}

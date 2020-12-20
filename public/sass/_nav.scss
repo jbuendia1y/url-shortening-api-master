@@ -127,10 +127,15 @@
         &__link{
             color: $GrayishViolet;
             font-weight: 700;
+            font-size: 1em;
 
             &-log{
                 margin-right: .5em;
             }
+        }
+
+        &__button{
+            color: white;
         }
     }
 }

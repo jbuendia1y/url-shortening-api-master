@@ -90,23 +90,33 @@
 
 @media screen and (min-width:1024px){
     .statistics{
+        padding-bottom: 1.5em;
+
+        &__text{
+            width: 55%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
         &Grid{
             max-width: unset;
 
             display: grid;
-            grid-template-columns: repeat(3,30%);
+            grid-template-columns: repeat(3,32%);
             grid-template-rows: repeat(2,30px) auto repeat(2,30px);
             column-gap: 1em;
             justify-content: center;
             align-items: center;
 
             &::before{
-                width: 100%;
+                width: 90%;
                 height: 8px;
-                right: 0;
+                right: 2%;
             }
 
             &__item{
+                align-items: flex-start;
+                padding-bottom: .8em;
                 &:nth-child(1){
                     grid-row: 1/4;
                 }
@@ -118,6 +128,28 @@
                 &:nth-child(3){
                     grid-row: 3/6;
                 }
+            }
+
+            &__img{
+                &-bg{
+                    left: 0;
+                    height: 50px;
+                    width: 50px;
+                }
+                &-w{
+                    height: 30px;
+                    width: 30px;
+                }
+            }
+
+            &__title,&__paragraph{
+                text-align: left;
+            }
+            &__title{
+                font-size: 1.3em;
+            }
+            &__paragraph{
+                font-size: .7em;
             }
         }
     }

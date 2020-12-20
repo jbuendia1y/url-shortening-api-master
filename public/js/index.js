@@ -12,19 +12,25 @@ const form = document.getElementsByClassName('shortForm')[0]
 const largeLink = form.querySelector('.shortForm__link')
 const formButton = form.querySelector('.shortForm__button')
 
+const loading = form.querySelector('.shortForm__loading')
+
 const validateInput = ()=>{
     if(largeLink.value == null || largeLink.value == ""){
         viewError("")
     }else if(largeLink.value !== null && largeLink.value !== ""){
+        loading.classList.toggle('shortForm__loading-active')
         getShortLink(largeLink.value)
     }
 }
 
-const getShortLink = (largeLinkI)=>{
-    fetch(`https://api.shrtco.de/v2/shorten?url=${largeLinkI}`)
+const getShortLink = async(largeLinkI)=>{
+    await fetch(`https://api.shrtco.de/v2/shorten?url=${largeLinkI}`)
         .then(res => res.json() )
         .then(data=>{
-            if(!data.ok)    viewError("invalid")
+            if(!data.ok){
+                loading.classList.toggle('shortForm__loading-active')
+                return viewError("invalid")
+            }
             else if(data.ok)    hiddenError()
             const shortLinks = document.getElementsByClassName('shortLinks')[0]
             const fragment = document.createDocumentFragment()
@@ -41,6 +47,7 @@ const getShortLink = (largeLinkI)=>{
             `
             fragment.append(shortLinks__item)
             shortLinks.append(fragment)
+            loading.classList.toggle('shortForm__loading-active')
         })
 }
 

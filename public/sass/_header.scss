@@ -1,9 +1,11 @@
 .header{
     overflow-x: hidden;
     padding-bottom: 1em;
+    margin-top: 1.5em;
+
     &__img{
         &-w{
-            max-width: 135%;
+            max-width: 150%;
         }
     }
 
@@ -35,23 +37,41 @@
 
 @media screen and (min-width:1024px){
     .header{
+        margin-top: 3em;
         &__box{
             display: grid;
             grid-template-columns: 55% 45%;
+            align-items: center;
         }
 
         &__img{
             grid-column: 2/3;
             grid-row: 1/2;
+
+            &-w{
+                max-width: unset;
+                width: 160%;
+            }
         }
 
         &__text{
             text-align: left;
+            width: 90%;
+        }
+
+        &__title{
+            margin-top: 0;
+            margin-bottom: .1em;
+            font-size: 3.5em;
+        }
+
+        &__paragraph{
+            margin-top: 0;
         }
 
         &__button{
             margin-left: 0;
-            width: 22%;
+            width: 25%;
         }
     }
 }

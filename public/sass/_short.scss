@@ -56,6 +56,22 @@
             font-weight: 700;
             font-size: 1.1em;
         }
+
+        &__loading{
+            display: none;
+
+            &-active{
+                display: block;
+                color: white;
+                font-size: 1.5em;
+                position: absolute;
+                right: 25px;
+                bottom: 22px;
+
+                animation: loader 2.1s linear infinite;
+            }
+        }
+
         &__link,&__button{
             border-radius: 5px;
         }
@@ -109,6 +125,15 @@
     }
 }
 
+@keyframes loader{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
 @media screen and (min-width:1024px){
     .short{
         &Form{
@@ -122,9 +147,43 @@
                 width: 75%;
             }
 
+            &__error{
+                &-invalid{
+                    position: absolute;
+                }
+            }
+
             &__button{
                 margin: 0 auto;
                 width: 20%;
+            }
+        }
+
+        &Links{
+            &__item{
+                display: flex;
+                align-items: center;
+
+                padding: .5em 1em;
+
+                &::before{
+                    background: none;
+                    height: unset;
+                    width: unset;
+                    display: unset;
+                }
+            }
+
+            &__largeLink{
+                margin: 0;
+            }
+
+            &__box{
+                margin: 0;
+
+                display: flex;
+                align-items: center;
+                margin-left: auto;
             }
         }
     }
