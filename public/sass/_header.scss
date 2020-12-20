@@ -1,0 +1,57 @@
+.header{
+    overflow-x: hidden;
+    padding-bottom: 1em;
+    &__img{
+        &-w{
+            max-width: 135%;
+        }
+    }
+
+    &__text{
+        text-align: center
+    }
+
+    &__title{
+        font-size: 2.5em;
+        color: $VeryDarkViolet;
+    }
+    &__paragraph{
+        font-size: 1.1em;
+        line-height: 25px;
+        color: $GrayishViolet;
+    }
+
+    &__button{
+        @include button;
+
+        width: 35%;
+        margin: 0 auto;
+        margin-top: 1.5em;
+        padding-top: .7em;
+        padding-bottom: .7em;
+        font-size: 1.1em;
+    }
+}
+
+@media screen and (min-width:1024px){
+    .header{
+        &__box{
+            display: grid;
+            grid-template-columns: 55% 45%;
+        }
+
+        &__img{
+            grid-column: 2/3;
+            grid-row: 1/2;
+        }
+
+        &__text{
+            text-align: left;
+        }
+
+        &__button{
+            margin-left: 0;
+            width: 22%;
+        }
+    }
+}

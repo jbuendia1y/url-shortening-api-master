@@ -1,0 +1,136 @@
+.nav{
+    padding-top: 1.5em;
+    &__box{
+        position: relative;
+        display: flex;
+        align-items: center;
+    }
+    &__logo{
+        margin-right: auto;
+        width: 30%;
+    }
+}
+
+.menu{
+    &__img{
+        font-size: 1.7em;
+        color: $GrayishViolet;
+    }
+    &__box{
+        visibility: hidden;
+        opacity: 0;
+        transition: .5s all;
+        position: absolute;
+        left: 0;
+        top: 45px;
+
+        box-sizing: border-box;
+        width: 100%;
+        background-color: $DarkViolet;
+        border-radius: 10px;
+
+        padding: 1em;
+
+        text-align: center;
+
+        &-border{
+            border-top: 1px solid $Gray;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+    }
+
+    &__list{
+        margin: 0;
+        padding: 0;
+    }
+
+    &__item{
+        list-style: none;
+        margin: 1.5em 0;
+
+        &:nth-child(1){
+            margin-top: .5em;
+        }
+    }
+
+    &__link{
+        text-decoration: none;
+        color: white;
+        font-size: 1.2em;
+
+        &-log,&-sign{
+            margin: .5em 0;   
+        }
+        &-log{
+            margin-top: 1em;
+        }
+    }
+    &__button{
+        @include button;
+    }
+
+    &__active{
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+@media screen and (min-width:1024px){
+    .nav{
+        &__logo{
+            width: 18%;
+        }
+    }
+    .menu{
+        width: 100%;
+        &__img{
+            display: none;
+        }
+
+        &__box{
+            visibility: visible;
+            opacity: 1;
+            transition: none;
+            position: unset;
+
+            padding: unset;
+            background: none;
+            border: none;
+
+            display: flex;
+
+            &-border{
+                border: none;
+                flex-direction: row;
+            }
+        }
+
+        &__list{
+            display: flex;
+            align-items: center;
+
+            margin-right: auto;
+            margin-left: .5em;
+        }
+
+        &__item{
+            margin: 0;
+            margin: 0 .5em;
+            &:nth-child(1){
+                margin-top: 0;
+            }
+        }
+
+        &__link{
+            color: $GrayishViolet;
+            font-weight: 700;
+
+            &-log{
+                margin-right: .5em;
+            }
+        }
+    }
+}
