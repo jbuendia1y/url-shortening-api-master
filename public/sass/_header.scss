@@ -67,11 +67,44 @@
 
         &__paragraph{
             margin-top: 0;
+            line-height: 1.7em;
         }
 
         &__button{
             margin-left: 0;
             width: 25%;
+            text-align: center;
+        }
+    }
+}
+
+@media screen and (min-width:1240px){
+    .header{
+
+        &__title{
+            font-size: 4em;
+        }
+        &__paragraph{
+            font-size: 1.3em;
+        }
+
+        &__button{
+            font-size: 1.3em;
+            padding-top: .7em;
+            padding-bottom: .7em;
+        }
+    }
+}
+
+@media screen and (min-width:1440px){
+    .header{
+        &__title{
+            font-size: 4.5em;
+        }
+
+        &__button{
+            padding-top: .9em;
+            padding-bottom: .9em;
         }
     }
 }

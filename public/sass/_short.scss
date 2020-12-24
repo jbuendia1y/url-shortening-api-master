@@ -28,13 +28,20 @@
         }
 
         &__error{
+            
+            &-input,&-invalid{
+                color: $Red;
+            }
+
+            &-input{
+                border: 3px solid $Red;
+            }
+
             &-invalid{
                 display: none;
                 opacity: 0;
                 visibility: hidden;
                 transition: .5s all;
-
-                color: $Red;
 
                 margin: 0;
                 margin-top: .3em;
@@ -66,14 +73,14 @@
                 font-size: 1.5em;
                 position: absolute;
                 right: 25px;
-                bottom: 22px;
+                bottom: 23.5px;
 
                 animation: loader 2.1s linear infinite;
             }
         }
 
         &__link,&__button{
-            border-radius: 5px;
+            border-radius: 7px;
         }
     }
 
@@ -103,6 +110,10 @@
 
         &__largeLink{
             margin-top: 0;
+            width: 250px;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
         }
         &__box{
             margin-top: 1.7em;
@@ -121,6 +132,12 @@
             padding-top: .6em;
             padding-bottom: .6em;
             text-align: center;
+
+            transition: all .5s;
+
+            &-copied{
+                background-color: $DarkViolet;
+            }
         }
     }
 }
@@ -153,9 +170,24 @@
                 }
             }
 
+            &__loading{
+                &-active{
+                    bottom: 45.5px;
+                    right: 40px;
+                }
+            }
+
+            &__link,&__button{
+                padding: .8em;
+            }
+            &__link{
+                padding-left: 1em;
+            }
+
             &__button{
-                margin: 0 auto;
-                width: 20%;
+                margin: 0 auto 0 1em;
+                width: 25%;
+                cursor: pointer;
             }
         }
 
@@ -164,7 +196,7 @@
                 display: flex;
                 align-items: center;
 
-                padding: .5em 1em;
+                padding: .7em 1.5em;
 
                 &::before{
                     background: none;
@@ -176,6 +208,7 @@
 
             &__largeLink{
                 margin: 0;
+                width: 250px;
             }
 
             &__box{
@@ -183,7 +216,71 @@
 
                 display: flex;
                 align-items: center;
+                justify-content: right;
                 margin-left: auto;
+
+                width: 45%;
+            }
+
+            &__button{
+                width: 18%;
+                margin-left: 1.5em;
+            }
+        }
+    }
+}
+
+@media screen and (min-width:1240px){
+    .short{
+        &Form{
+            padding: 2.2em;
+            top: 45px;
+            &__link,&__button{
+                padding: 1em;
+            }
+            &__link{
+                font-size: 1.2em;
+            }
+            &__button{
+                font-size: 1.3em;
+            }
+
+            &__loading-active{
+                bottom: 42%;
+                right: 6%;
+            }
+        }
+
+        &Links{
+            &__item{
+                padding: 1em 2em;
+            }
+
+            &__largeLink,&__box{
+                font-size: 1.2em;
+            }
+        }
+    }
+}
+
+@media screen and (min-width:1440px){
+    .short{
+        &Form{
+            &__link{
+                font-size: 1.35em;
+            }
+            &__button{
+                font-size: 1.45em;
+            }
+        }
+
+        &Links{
+            &__item{
+                padding: 1.5em 2.5em;
+            }
+
+            &__largeLink,&__box{
+                font-size: 1.4em;
             }
         }
     }

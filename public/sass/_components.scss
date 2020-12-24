@@ -9,6 +9,11 @@
 
     text-decoration: none;
     color: white;
+
+    &:hover{
+        filter: grayscale(50%) brightness(120%);
+       /*  opacity: .5; */
+    }
 }
 
 .container{
@@ -20,5 +25,11 @@
 @media screen and (min-width:1024px){
     .container{
         width: 85%;
+    }
+}
+
+@media screen and (min-width:1240px){
+    .container{
+        width: 80%;
     }
 }

@@ -29,5 +29,20 @@
 @media screen and (min-width:1024px){
     .boost{
         background-image: url('/static/images/bg-boost-desktop.svg');
+
+        &__title{
+            font-size: 2em;
+        }
+    }
+}
+
+@media screen and (min-width:1240px){
+    .boost{
+        &__title{
+            font-size: 2.5em;
+        }   
+        &__button{
+            font-size: 1.2em;
+        }
     }
 }

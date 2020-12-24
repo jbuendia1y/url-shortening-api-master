@@ -113,7 +113,7 @@
             align-items: center;
 
             margin-right: auto;
-            margin-left: .5em;
+            margin-left: 1em;
         }
 
         &__item{
@@ -130,12 +130,59 @@
             font-size: 1em;
 
             &-log{
-                margin-right: .5em;
+                margin-right: 1.5em;
+            }
+
+            &:hover{
+                color: black;
             }
         }
 
         &__button{
             color: white;
+            &:hover{
+                color: white;
+            }
+        }
+    }
+}
+
+@media screen and (min-width:1240px){
+    .nav{
+        &__logo{
+            width: 15%;
+        }
+    }
+    .menu{
+        &__box,&__box-border{
+            align-items: center;
+        }
+
+        &__list{
+            margin-left: 1.5em;
+        }
+
+        &__item{
+            margin-right: .8em;
+            margin-left: .8em;
+        }
+
+        &__link-log{
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+
+        &__button{
+            padding-top: .7em;
+            padding-bottom: .7em;
+        }
+    }
+}
+
+@media screen and (min-width:1440px){
+    .menu{
+        &__link{
+            font-size: 1.2em;
         }
     }
 }
